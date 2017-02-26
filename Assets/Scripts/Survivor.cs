@@ -111,9 +111,9 @@ public class Survivor : Character
                     float cDistance = Vector2.Distance(transform.position, c.transform.position);
                     float bestDistance = Vector2.Distance(transform.position, bestTarget.transform.position);
                     aliveEnemiesSeen++;
-                    gameObject.GetComponentInChildren<TextMesh>().text = aliveEnemiesSeen.ToString();
+                    //gameObject.GetComponentInChildren<TextMesh>().text = aliveEnemiesSeen.ToString();
 
-                    if (cDistance < bestDistance)
+                    if (cDistance < bestDistance || bestTarget.State == CharacterState.Dead)
                         bestTarget = c;
                 }
             }

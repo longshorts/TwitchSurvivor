@@ -39,6 +39,8 @@ public class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
+
         switch (State)
         {
             case CharacterState.Wander:
